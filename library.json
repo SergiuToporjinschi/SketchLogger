@@ -3,7 +3,7 @@
     "description": "A line logger",
     "repository": {
         "type": "git",
-        "url": "https://github.com/SergiuToporjinschi/SketchLogger"
+        "url": "https://github.com/SergiuToporjinschi/SketchLogger.git"
     },
     "keywords": "ESP, ESP8266, IOT, WIFI, OTA",
     "authors": "Sergiu Toporjinschi",
