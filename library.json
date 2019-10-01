@@ -8,12 +8,6 @@
     "keywords": "ESP, ESP8266, IOT, WIFI, OTA",
     "authors": "Sergiu Toporjinschi",
     "version": "1.0.1",
-    "frameworks": "*",
-    "platforms": [
-        "espressif8266",
-        "atmelavr"
-    ],
-    "examples": [
-        "examples/*.cpp"
-    ]
+    "frameworks": "arduino",
+    "platforms": "*"
 }
