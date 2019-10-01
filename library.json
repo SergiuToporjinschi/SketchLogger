@@ -1,5 +1,6 @@
 {
     "name": "SketchLogger",
+    "version": "1.0.3",
     "description": "A line logger",
     "repository": {
         "type": "git",
@@ -7,7 +8,6 @@
     },
     "keywords": "ESP, ESP8266, IOT",
     "authors": "Sergiu Toporjinschi",
-    "version": "1.0.2",
     "frameworks": "arduino",
     "platforms": "*"
 }

@@ -12,4 +12,26 @@ Logging system for sketches
 
 # Dependency 
 - none
+# Macros
+* `DEBUGGER` if defined, will output the text which calls `DBGLN`;
+* `DEBUGGER_SHORT_FILENAME` if defined, the file path will be replaced with just the file name;
+# Examples
+```cpp
+#include "debug_macro.h" //Include macros
 
+#include <Arduino.h>
+
+Print *dbg; // we need to define this as global to be used by debug name space
+void setup() {
+  Serial.begin(74880); //initialize serial 
+  dbg = &Serial; //assign serial to dbg variable
+
+  char x = 't';
+  DBGLN("test: %c", x); //src\main.cpp(32): test: t 
+}
+
+void loop() {
+  delay(1000);
+  DBGLN("debug Line"); //src\main.cpp(37): debug Line
+}
+```

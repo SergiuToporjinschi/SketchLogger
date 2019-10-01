@@ -1,16 +1,11 @@
 //=================[ DEBUG ]================
 #if defined(DEBUGGER)
-#  include "MemoryFree.h"
-
-#  ifdef ARDUINO_ARCH_AVR
-#    include "debug_ns.h"
-// #  define __FILENAME__ (strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
-// #  define DBGLN(x, ...) debug::printDBG(__FILENAME__, __LINE__, x, ##__VA_ARGS__)
-
+#  include "debug_ns.h"
+#  ifdef DEBUGGER_SHORT_FILENAME
+#    define DBGLN(x, ...) debug::printDBG((strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__), __LINE__, x, ##__VA_ARGS__)
+#  else
 #    define DBGLN(x, ...) debug::printDBG(__FILE__, __LINE__, x, ##__VA_ARGS__)
-#  else  //ARDUINO_ARCH_AVR
-#  endif //ARDUINO_ARCH_AVR
-
+#  endif //DEBUGGER_SHORT_FILENAME
 #else
 #  define DBGLN(X, ...)
 #endif // DEBUG
