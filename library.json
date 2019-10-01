@@ -5,7 +5,7 @@
         "type": "git",
         "url": "https://github.com/SergiuToporjinschi/SketchLogger.git"
     },
-    "keywords": "ESP, ESP8266, IOT, WIFI, OTA",
+    "keywords": "ESP, ESP8266, IOT",
     "authors": "Sergiu Toporjinschi",
     "version": "1.0.1",
     "frameworks": "arduino",

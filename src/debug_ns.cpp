@@ -1,6 +1,6 @@
+#ifdef ARDUINO_ARCH_AVR
 #include "debug_ns.h"
 #include "SoftwareSerial.h"
-
 extern Print *dbg;
 namespace debug {
   void printDBG(const char *file, int line, const char *format, ...) {
@@ -19,3 +19,4 @@ namespace debug {
     ::dbg->flush();
   }
 } // namespace debug
+#endif

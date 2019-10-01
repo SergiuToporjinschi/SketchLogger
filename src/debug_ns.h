@@ -1,9 +1,12 @@
 #ifndef debug_h
 #define debug_h
-#include <Arduino.h>
+#ifdef ARDUINO_ARCH_AVR
+
+#  include <Arduino.h>
 
 namespace debug {
   void printDBG(const char *file, int line, const char *format, ...);
 } // namespace debug
 
+#endif
 #endif //debug_h
