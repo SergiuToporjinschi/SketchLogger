@@ -17,16 +17,12 @@ namespace debug {
 
   void printDBG(const char *file, int line, const char *format, ...) {
     printFileAndLine(file, line);
+    char temp[150] = {0};
     va_list arg;
     va_start(arg, format);
-#ifdef ARDUINO_ARCH_AVR
-    char temp[150] = {0};
     vsprintf(temp, format, arg);
-    ::dbg->write(temp);
-#elif defined(ARDUINO_ARCH_ESP8266)
-    ::dbg->printf(format, arg);
-#endif
     va_end(arg);
+    ::dbg->write(temp);
     ::dbg->write('\n');
     ::dbg->flush();
   }
