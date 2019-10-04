@@ -1,15 +1,21 @@
 {
     "name": "SketchLogger",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "A line logger",
+    "license": "GPL-3.0-only",
     "repository": {
         "type": "git",
         "url": "https://github.com/SergiuToporjinschi/SketchLogger.git"
     },
-    "keywords": "ESP, ESP8266, IOT",
+    "keywords": "ESP, ESP32, ESP8266, IOT, Arduino, Serial, Log, Debug",
     "authors": {
-        "name": "Sergiu Toporjinschi"
+        "name": "Sergiu Toporjinschi",
+        "maintainer": true
     },
     "frameworks": "arduino",
-    "platforms": "*"
+    "platforms": [
+        "espressif8266",
+        "espressif32",
+        "atmelavr"
+    ]
 }
