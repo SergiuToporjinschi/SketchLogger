@@ -6,12 +6,10 @@
         "type": "git",
         "url": "https://github.com/SergiuToporjinschi/SketchLogger.git"
     },
-	"export":
-    {
-        "include": "src"
-    },
     "keywords": "ESP, ESP8266, IOT",
-    "authors": "Sergiu Toporjinschi",
+    "authors": {
+        "name": "Sergiu Toporjinschi"
+    },
     "frameworks": "arduino",
     "platforms": "*"
 }
