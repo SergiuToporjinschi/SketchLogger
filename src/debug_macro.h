@@ -23,7 +23,9 @@
 //=================[ DEBUG ]================
 #if defined(DEBUGGER)
 #  include "debug_ns.h"
+#  include <Arduino.h>
 
+extern Print *dbg;
 #  ifdef DEBUGGER_SHORT_FILENAME
 #    define _FILE_NAME_ (strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
 #  else

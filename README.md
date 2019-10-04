@@ -16,12 +16,15 @@ Logging system for sketches
 * `DEBUGGER` if defined, will output the text which calls `DBGLN`;
 * `DEBUGGER_SHORT_FILENAME` if defined, the file path will be replaced with just the file name;
 # Examples
+Using debugger in a lib can be used just by including `debug_macro.h` in cpp file
+Setting the debugger in main file
+
 ```cpp
 #include "debug_macro.h" //Include macros
+#ifdef DEBUGGER 
+Print *dbg = &Serial; // we need to define this as global to be used by debug name space
+#endif
 
-#include <Arduino.h>
-
-Print *dbg; // we need to define this as global to be used by debug name space
 void setup() {
   Serial.begin(74880); //initialize serial 
   dbg = &Serial; //assign serial to dbg variable
