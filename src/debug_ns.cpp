@@ -30,7 +30,7 @@ namespace debug {
 
   void printFileAndLine(const char *file, int line) {
     char _line[100] = {0};
-    snprintf(_line, sizeof(_line), "%s(%i): ", file, line);
+    snprintf(_line, 99, "%s(%i): ", file, line);
     ::dbg->write(_line);
     ::dbg->flush();
   }
