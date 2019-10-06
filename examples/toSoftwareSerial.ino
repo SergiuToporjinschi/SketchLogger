@@ -25,16 +25,13 @@
 
 #include <Arduino.h>
 
-Print *dbg; // we need to define this as global to be used by debug name space
+Print *dbg = new SoftwareSerial(13, 15); // we need to define this as global to be used by debug name space
 void setup() {
   pinMode(13, INPUT);
   pinMode(15, OUTPUT);
 
-  SoftwareSerial softSerial(13, 15); // we need to define this as local to be able to do the initialization 
   Serial.begin(74880);
-  softSerial.begin(74880); // we need to initialize SoftwareSerial before any DBGLN lines
-
-  dbg = &softSerial; // Assing the softSerial to dbg on global level
+  ((SoftwareSerial *)dbg)->begin(74880); // we need to initialize SoftwareSerial before any DBGLN lines
 
   char x = 't';
   DBGLN("test: %c", x); //src\main.cpp(37): test: t
