@@ -17,5 +17,8 @@
         "espressif8266",
         "espressif32",
         "atmelavr"
+    ],
+    "exclude" : [
+        "*/*main.cpp"
     ]
 }

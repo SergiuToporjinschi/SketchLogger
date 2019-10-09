@@ -35,12 +35,11 @@ extern Print *dbg;
 #  ifdef ARDUINO_ARCH_AVR
 #    define DBGLN(x, ...) debug::printDBG(_FILE_NAME_, __LINE__, x, ##__VA_ARGS__)
 
-#  elif defined(ARDUINO_ARCH_ESP8266)
+#  elif defined(ARDUINO_ARCH_ESP8266) || defined(ARDUINO_ARCH_ESP32)
 #    define DBGLN(x, ...)                               \
       ::dbg->printf("%s(%i): ", _FILE_NAME_, __LINE__); \
       ::dbg->printf(x, ##__VA_ARGS__);                  \
-      ::dbg->write('\n');                               \
-      ::dbg->flush();
+      ::dbg->write('\n');
 #  endif //ARDUINO_ARCH_AVR
 
 #else

@@ -19,11 +19,12 @@
   All rights reserved
 
 */
+#if defined(ARDUINO_ARCH_ESP8266) || defined(ARDUINO_ARCH_AVR)
 
-#include "SoftwareSerial.h"
-#include "debug_macro.h"
+#  include "SoftwareSerial.h"
+#  include "debug_macro.h"
 
-#include <Arduino.h>
+#  include <Arduino.h>
 
 Print *dbg = new SoftwareSerial(13, 15); // we need to define this as global to be used by debug name space
 void setup() {
@@ -41,3 +42,5 @@ void loop() {
   delay(1000);
   DBGLN("debug Line on SoftwareSerial"); //src\main.cpp(42): debug Line on SoftwareSerial
 }
+
+#endif // defined(ARDUINO_ARCH_ESP8266) || defined(ARDUINO_ARCH_AVR)
