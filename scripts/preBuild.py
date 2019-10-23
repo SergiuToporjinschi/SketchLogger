@@ -3,7 +3,7 @@ try:
 except ImportError:
     import ConfigParser as configparser
 import shutil, os
-print '########### Run pre-build scripts ###########'
+print ('########### Run pre-build scripts ###########')
 
 config = configparser.ConfigParser()
 config.read("platformio.ini")
@@ -23,4 +23,4 @@ def createExamples():
 clearMainFile()
 createExamples()
 
-print '########### Finish pre-build scripts ###########'
+print ('########### Finish pre-build scripts ###########')
